@@ -23,7 +23,6 @@ angular.module('portainer', [
   'container',
   'containerConsole',
   'containerLogs',
-  'serviceLogs',
   'containers',
   'createContainer',
   'createNetwork',
@@ -143,25 +142,12 @@ angular.module('portainer', [
         }
       }
     })
-    .state('containerlogs', {
+    .state('logs', {
       url: "^/containers/:id/logs",
       views: {
         "content@": {
           templateUrl: 'app/components/containerLogs/containerlogs.html',
           controller: 'ContainerLogsController'
-        },
-        "sidebar@": {
-          templateUrl: 'app/components/sidebar/sidebar.html',
-          controller: 'SidebarController'
-        }
-      }
-    })
-    .state('servicelogs', {
-      url: "^/services/:id/logs",
-      views: {
-        "content@": {
-          templateUrl: 'app/components/serviceLogs/servicelogs.html',
-          controller: 'ServiceLogsController'
         },
         "sidebar@": {
           templateUrl: 'app/components/sidebar/sidebar.html',
